@@ -21,20 +21,24 @@ function updateCaseQuantity(isIncrease){
     
 }
 
+
 function updateCaseTotalPrice(newCaseQuantity){
     const newCaseTotal = newCaseQuantity * 59;
     const caseTotalElement = document.getElementById('case-total');
     caseTotalElement.innerText = newCaseTotal;
 }
 
+
+
 document.getElementById('btn-case-plus').addEventListener('click', function(){
    const newCaseQuantity = updateCaseQuantity(true);
    updateCaseTotalPrice(newCaseQuantity);
-   
+   updateSubTotal();
 
 })
 
 document.getElementById('btn-case-minus').addEventListener('click', function(){
    const newCaseQuantity = updateCaseQuantity(false);
    updateCaseTotalPrice(newCaseQuantity);
+   updateSubTotal();
 })
